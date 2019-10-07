@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>MH - iceborn</title>
+    <script src="./js/main.js"></script>
+    <style>
+        #content {
+        animation: fadein 5s;
+        -webkit-animation: fadein 5s;
+    }
+    @keyframes fadein {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+    @-webkit-keyframes fadein {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+    html { background: url(./common/img/bgimg.png) no-repeat center center fixed;
+         -webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;
+         background-size: cover;}
+    
+    .index1{
+        padding: 0;
+        text-align: center;
+        
+    }
+    .index2{
+        padding: 0;
+        margin-top: 150px;
+        text-align: center;
+        
+    }
+
+    </style>
+</head>
+<body>
+    <header class="index1">
+        <a href="./index.html" id="content">
+            <img src="./common/img/logo.png" alt="logo"></a>
+    </header>
+     <section class="index2">
+        <a href="./common/main.html" id="content"><img src="./common/img/click.png" alt="click"></a>
+     </section>
+</body>
+</html>

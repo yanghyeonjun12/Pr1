@@ -1,0 +1,83 @@
+
+//메인페이지
+html { background: url(../common/img/bgimg2.png) no-repeat center center fixed;
+         -webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;
+         background-size: cover;}
+    
+
+.Foot{
+    padding: 0;
+    margin-top:390px;
+    margin-left:470px;
+    position: absolute;
+}
+
+.imgP {
+    float: left;
+    margin:0;
+    padding: 0; 
+    margin-left: 70px;
+    
+}
+.imgB {
+    position: absolute;
+    margin-top: 80px;
+    margin-left: 980px;
+    padding: 0; 
+    float: right;
+}
+
+.ment {
+    position: absolute;
+    margin-left:470px;
+    margin-top: 30px;
+    padding: 0;
+}
+.back a{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    font-size: 14px;
+    font-family: 'Cinzel', serif;
+}
+.back a:link{
+    text-decoration: none;
+    color: black;
+}
+.back a:visited{
+    text-decoration: none;
+    color: black;
+}
+.back a:active{
+    text-decoration: none;
+    color: black;
+}
+.back a:hover{
+    text-decoration: none;
+    color: crimson;
+}
+//메뉴바
+.menu {
+    list-style-type: none;
+    margin: 0; padding: 0; overflow: hidden;
+    background-color: none;
+    width: 1400px;
+    display: flex;
+    align-items: center;
+    margin-left: 50px;
+}
+.menu li { float: left; }
+.menu .float_r { float: right;}
+.menu li a {
+    display: block; color: #333;
+    text-align: center; padding: 0px 30px;
+    text-decoration: none;
+    font-size:22px;
+    font-family: 'Cinzel', serif;
+}
+
+.menu li a.active { background-color: none; color: white; }
+.menu li a:hover:not(.active) { background-color: none; color: steelblue; }
+
+
+

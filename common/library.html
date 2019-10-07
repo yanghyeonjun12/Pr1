@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="../js/main.js"></script>
+    <style>
+            @import url('https://fonts.googleapis.com/css?family=Cinzel:700|Paytone+One&display=swap');
+    </style>
+    <style>
+     #content {
+        animation: fadein 4s;
+        -webkit-animation: fadein 4s;
+    }
+    @keyframes fadein {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+    @-webkit-keyframes fadein {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+    #slidebox {
+            width:600px;
+            height:337px;
+            overflow:hidden;
+            white-space:nowrap;
+            position: fixed;
+            margin-left: 480px;
+            margin-top: 50px;
+            border-top: 5px solid #333;
+            border-bottom: 5px solid #333;
+        }
+        #slidebox ul#slider {
+            list-style:none;
+            margin:0;
+            padding:0;
+        }
+        #slidebox ul li {
+            position:absolute;
+            width:300px;
+            height:300px;
+        }
+        #slidebox ul li img {
+            width:600px;
+            height:337px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="back">
+        <a href="../index.html">Return to main</a>
+    </div>
+    <section>
+        <ul class="menu">
+            <li><a href="./main.html">HOME</a></li>
+            <div class="dis"></div>
+            <li><a href="./news.html">NEWS</a></li>
+            <div class="dis"></div>
+            <li><a href="./events.html">EVENT</a></li>
+            <div class="dis"></div>
+            <li><a href="./intro.html">INTRO</a></li>
+            <div class="dis"></div>
+            <li>
+                <a href="./main.html"><img src="./img/logo2.png" alt="logo2"></a>
+            </li>
+            <div class="dis"></div>
+            <li>
+                <a href="https://store.steampowered.com/app/1118010/Monster_Hunter_World_Iceborne/?l=koreana">STEAM</a></li>
+            <div class="dis"></div>
+            <li>
+                <a href="https://www.youtube.com/channel/UCyuEAZQzRqhcaLZvQd9ZUNA">YOUTUBE</a></li>
+            <div class="dis"></div>
+            <li><a href="./library.html">LIBRARY</a></li>
+            <div class="dis"></div>
+        </ul>
+    </section>
+    <div id="slidebox">
+            <ul id="slider">
+                <li>
+                    <img src="../common/img/lib1.png" />
+                </li>
+                <li>
+                    <img src="../common/img/lib2.png" />
+                </li>
+                <li>
+                    <img src="../common/img/lib3.png" />
+                </li>
+                <li>
+                    <img src="../common/img/lib4.png" />
+                </li>
+                <li>
+                    <img src="../common/img/lib5.png" />
+                </li>
+            </ul>
+        </div>
+        <div class="Foot">
+            <a><img src="../common/img/click.png"></a>
+        </div>
+        <script type='text/javascript'>
+            var x = 600;
+            var slider = document.getElementById("slider");
+            var slideArray = slider.getElementsByTagName("li");
+            var slideMax = slideArray.length - 1;
+            var curSlideNo = 0;
+     
+            for (i = 0; i <= slideMax; i++) {
+                if (i == curSlideNo) slideArray[i].style.left = 0;
+                else slideArray[i].style.left = -x + "px";
+            }
+     
+            slider.addEventListener('click', function () {
+                changeSlide();
+            }, false);
+     
+            var aniStart = false;
+            var next = 1;
+            var changeSlide = function(){
+                if (aniStart === true) return;
+                next = curSlideNo + 1;
+                if (next > slideMax) next = 0;
+                aniStart = true;
+                sliding();
+            }
+     
+            function sliding() {
+                var curX = parseInt(slideArray[curSlideNo].style.left, 10);
+                var nextX = parseInt(slideArray[next].style.left, 10);
+                var newCurX = curX + 10;
+                var newNextX = nextX + 10;
+                if (newCurX >= x) {
+                    slideArray[curSlideNo].style.left = -x + "px";
+                    slideArray[next].style.left = 0;
+                    curSlideNo = curSlideNo + 1;
+                    if (curSlideNo > slideMax) curSlideNo = 0;
+                    aniStart = false;
+                    return;
+                }
+                slideArray[curSlideNo].style.left = newCurX + "px";
+                slideArray[next].style.left = newNextX + "px";
+                setTimeout(function () {
+                    sliding();
+                }, 20);
+            }
+            setInterval(changeSlide,6000);
+        </script>
+</body>
+</html>
